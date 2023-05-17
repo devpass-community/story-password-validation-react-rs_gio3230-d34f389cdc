@@ -8,9 +8,15 @@ const initialState = {
 };
 
 export const validatePassword = (password) => {
-  // TODO
-  return false;
+  const regex = /^\d{6}$/;
+  if (!regex.test(password)) {
+    console.log("Your passsword must have 6 numerical characters.");
+    return false;
+  }
+
+  return true;
 };
+
 
 const Login = () => {
   const [state, setState] = useState(initialState);
